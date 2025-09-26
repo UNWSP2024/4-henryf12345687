@@ -6,14 +6,23 @@
 # user is over or under budget.
 
 def main():
-    budget = 0.0
-    difference = 0.0
-    spent = 1.0         #initialize for while loop
-    total = 0.0
+    budget = float(input("Enter how much money you have budgeted this month: "))
+    total_spent = 0.0
+    while True:
+        expense = float(input("Enter an expense or type 0 to stop: "))
+        if expense == 0:
+            break
+        total_spent += expense
+    difference = budget - total_spent 
+    print("Budget:", budget, "dollars")
+    print("Total money spent:", total_spent, "dollars")
+    if difference > 0:
+        print("You are under budget by", difference, "dollars")
+    elif difference < 0:
+        print("You are over budget by:", abs(difference), "dollars")
+    else:
+        print("You spent your exact budget.")
 
-    ######################
-    # WRITE YOUR CODE HERE
-    ######################
 
 
 if __name__ == '__main__':
